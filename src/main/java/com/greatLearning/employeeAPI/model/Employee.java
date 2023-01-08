@@ -1,4 +1,4 @@
-package com.greatLearning.employeeAPI.entity.model;
+package com.greatLearning.employeeAPI.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,7 +25,7 @@ public class Employee {
     @Column(name="lastName")
     private String lastName;
 
-    @Column(name="emailName")
-    private String emailName;
+    @Column(name="empEmail")
+    private String empEmail;
 
 }

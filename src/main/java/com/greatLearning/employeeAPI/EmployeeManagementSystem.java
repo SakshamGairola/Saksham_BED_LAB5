@@ -1,4 +1,4 @@
-package com.greatLearning;
+package com.greatLearning.employeeAPI;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

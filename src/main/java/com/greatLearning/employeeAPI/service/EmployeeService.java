@@ -1,2 +1,16 @@
-package com.greatLearning.employeeAPI.service;public interface EmployeeService {
+package com.greatLearning.employeeAPI.service;
+
+import com.greatLearning.employeeAPI.model.Employee;
+
+import java.util.List;
+
+public interface EmployeeService {
+
+    //update and save(insert and update)
+    public Employee saveEmployee(Employee employee);
+
+    //get all(view)
+    public List<Employee> getAllEmployees();
+
+    public void deleteEmployee(Employee employee);
 }
