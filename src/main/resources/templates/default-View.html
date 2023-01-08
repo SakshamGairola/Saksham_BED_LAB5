@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <style>
+table, th, td {
+  border: 1px solid black;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Home</title>
 </head>
 <body>
-$END$
+<p>Employee Management System</p>
+<p>List Employees</p>
+<form th:action="@{/employees/new}" method="get">
+    <input type="submit" value="Add Employee">
+</form>
+<br>
+<table>
+    <tr>
+        <th>Employee First Name</th>
+        <th>Employee Last Name</th>
+        <th>Employee Email</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="eachEmp:${empList}">
+        <td th:text="${eachEmp.getFirstName()}"/>
+        <td th:text="${eachEmp.getLastName()}"/>
+        <td th:text="${eachEmp.getEmpEmail()}"/>
+        <td>
+
+            <form th:action="@{/edit/{empID}(empID=${eachEmp.getEmpID()})}">
+                <input type="submit" value="update">
+            </form>
+            <form th:action="@{/delete/{empID}(empID=${eachEmp.getEmpID()})}">
+                <input type="submit" value="delete">
+            </form>
+
+        </td>
+    </tr>
+</table>
 </body>
 </html>

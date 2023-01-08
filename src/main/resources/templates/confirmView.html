@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Confirm</title>
 </head>
 <body>
-$END$
+<p>First Name: <span th:text="${employeeModel.getFirstName()}"/></p>
+<p>Last Name: <span th:text="${employeeModel.getLastName()}"/></p>
+<p>Email: <span th:text="${employeeModel.getEmpEmail()}"/></p>
+
+<a th:href="@{/}"> Back to home</a>
 </body>
 </html>
