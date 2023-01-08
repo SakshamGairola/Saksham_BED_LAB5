@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Employee</title>
+</head>
+<body>
+<p>Employee Management System</p><br>
+<form action="#" th:action="@{/employees/confirm}" th:object="${employee}" method="post">
+    <p>Create New Employee</p><br>
+
+    <p>Employee First Name</p>
+    <p><input name="firstName" placeholder="Enter First Name" type="text" th:field="*{firstName}"></p><br>
+
+    <p>Employee Last Name</p>
+    <p><input name="lastName" placeholder="Enter Last Name" type="text" th:field="*{lastName}"></p><br>
+
+    <p>Employee Email</p>
+    <p><input name="email" placeholder="Enter Email" type="email" th:field="*{empEmail}"></p><br>
+
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>
