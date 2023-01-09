@@ -12,5 +12,7 @@ public interface EmployeeService {
     //get all(view)
     public List<Employee> getAllEmployees();
 
+    public Employee findEmployeeByID(int empID);
+
     public void deleteEmployee(Employee employee);
 }
