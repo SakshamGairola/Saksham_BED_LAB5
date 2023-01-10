@@ -16,7 +16,7 @@ import java.util.Map;
 public class HomeController {
 
     @Autowired
-    EmployeeService employeeService;
+    private EmployeeService employeeService;
 
 
     //homeView -> list all employees
@@ -33,11 +33,8 @@ public class HomeController {
     @PostMapping("/confirm")
     public ModelAndView test(@ModelAttribute Employee employee) {
         ModelAndView modelAndView = new ModelAndView("confirmView");
-        //save the obj here
-        //also update obj here
-//        this.employeeService.saveEmployee(employee);
         System.out.println(employee);
-        this.employeeService.saveEmployee(new Employee(1, "saksham", "g", "some-email"));
+        this.employeeService.saveEmployee(employee);
         modelAndView.addObject("employeeModel", employee);
         return modelAndView;
     }

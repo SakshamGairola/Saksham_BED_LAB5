@@ -12,13 +12,9 @@ import java.io.IOException;
 @RequestMapping("/")
 public class RedirectController {
 
-    //redirectes to '/home' url
+    //redirect to '/employees' url
     @GetMapping("/")
     public void redirect(HttpServletResponse response) throws IOException {
         response.sendRedirect("/employees");
-    }
-    @PostMapping("/test")
-    public String redirect() {
-        return "this is '/test/'";
     }
 }

@@ -17,11 +17,14 @@ public class DeleteEmployeeController {
     private EmployeeService employeeService;
 
     @GetMapping("/delete/{empID}")
-    public ModelAndView delete(@PathVariable("empID") int empId){
-        ModelAndView modelAndView = new ModelAndView("deleteView");
+    public ModelAndView delete(@PathVariable("empID") int empId) {
+        ModelAndView modelAndView = new ModelAndView("invalidView");
         Employee deletedEmployee = this.employeeService.findEmployeeByID(empId);
-        this.employeeService.deleteEmployee(deletedEmployee);
-        modelAndView.addObject("deletedEmployee", deletedEmployee);
+        if (deletedEmployee != null) {
+            this.employeeService.deleteEmployee(deletedEmployee);
+            modelAndView.setViewName("deleteView");
+            modelAndView.addObject("deletedEmployee", deletedEmployee);
+        }
         return modelAndView;
     }
 }

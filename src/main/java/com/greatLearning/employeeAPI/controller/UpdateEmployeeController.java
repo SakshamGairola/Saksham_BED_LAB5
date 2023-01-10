@@ -15,9 +15,12 @@ public class UpdateEmployeeController {
 
     @GetMapping("/edit/{empID}")
     public ModelAndView showUpdateForm(@PathVariable("empID") int empID) {
-        ModelAndView modelAndView = new ModelAndView("editEmployeeView");
+        ModelAndView modelAndView = new ModelAndView("invalidView");
         Employee employee = this.employeeService.findEmployeeByID(empID);
-        modelAndView.addObject("employee", employee);
+        if(employee!=null){
+            modelAndView.setViewName("editEmployeeView");
+            modelAndView.addObject("employee", employee);
+        }
         return modelAndView;
     }
 
